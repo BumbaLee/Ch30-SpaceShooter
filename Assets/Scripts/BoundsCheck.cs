@@ -20,7 +20,7 @@ public class BoundsCheck : MonoBehaviour
 
     void Awake(){
         camHeight=Camera.main.orthographicSize;
-        camWidth= camHeight*Camera.main.aspect;
+        camWidth= camHeight* Camera.main.aspect;
     }
 
     void LateUpdate(){
