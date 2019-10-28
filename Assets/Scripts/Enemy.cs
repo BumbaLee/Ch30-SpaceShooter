@@ -31,7 +31,6 @@ public class Enemy : MonoBehaviour
         if(bndCheck!= null&&bndCheck.offDown){
                 //were on the bottom, so destroy this gameobject
                 Destroy(gameObject);
-            }
         }
     }
     public virtual void Move(){
