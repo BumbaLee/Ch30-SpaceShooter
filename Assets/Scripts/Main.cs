@@ -52,7 +52,7 @@ public class Main : MonoBehaviour
 
     public void Restart(){
         //reload scene to restart the game
-        SceneManager.LoadScene("_Scene_0");
+        SceneManager.LoadScene("Chs-30-31-SpaceShmup");
     }
 
     
