@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement 
+using UnityEngine.SceneManagement; 
 
 public class Main : MonoBehaviour
 {
@@ -9,8 +9,8 @@ public class Main : MonoBehaviour
 
     [Header ("Set in Inspector")]
     public GameObject[] prefabEnemies; //arrary of Enemy prefabs
-    public float enemySpawnperSecond= 0.5f; //#enemies/second
-    public float enemyDefaultPadding= 1.5f // padding for position
+    public float enemySpawnPerSecond= 0.5f; //#enemies/second
+    public float enemyDefaultPadding= 1.5f; // padding for position
 
     private BoundsCheck bndCheck;
 
@@ -24,21 +24,21 @@ public class Main : MonoBehaviour
 
     public void SpawnEnemy(){
         //pick a random Enemy prefab to instantiate
-        int ndx=Random.Range(0,prefabEnemies.length);
-        GameObject go= Instatiate<GameObject>(prefabEnemies[ndx]);
+        int ndx=Random.Range(0,prefabEnemies.Length);
+        GameObject go= Instantiate<GameObject>(prefabEnemies[ndx]);
 
         //position the enemy above the screen with a random x position
         float enemyPadding= enemyDefaultPadding;
         if(go.GetComponent<BoundsCheck>()!= null){
-            enemyPaddding= Mathf.Abs(go.GetComponent<BoundsCheck>().radius);
+            enemyPadding= Mathf.Abs(go.GetComponent<BoundsCheck>().radius);
         }
 
         //set the initial position for the spawned Enemy
         Vector3 pos= Vector3.zero; 
-        float xMin= -bndCheck.camWidth+enemyPaddding;
-        float xMax= bndCheck.camWidth-enemyPaddding;
+        float xMin= -bndCheck.camWidth+enemyPadding;
+        float xMax= bndCheck.camWidth-enemyPadding;
         pos.x= Random.Range(xMin,xMax);
-        pos.y= bndCheck.camHeight+enemyPaddding;
+        pos.y= bndCheck.camHeight+enemyPadding;
         go.transform.position= pos;
 
         //Invoke SpawnEnemy() again
