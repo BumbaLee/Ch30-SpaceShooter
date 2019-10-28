@@ -580,6 +580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9532260683b75413db705db26a32edfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationsPerSecond: 0.1
+  levelShown: 0
 --- !u!1 &2010545036
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +593,7 @@ GameObject:
   - component: {fileID: 2010545039}
   - component: {fileID: 2010545038}
   - component: {fileID: 2010545037}
+  - component: {fileID: 2010545040}
   m_Layer: 0
   m_Name: _Hero
   m_TagString: Untagged
@@ -647,3 +650,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2010545040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010545036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75d893e5e731429b817029d70940d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
