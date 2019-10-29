@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     private Renderer rend;
 
     [Header("Set Dynamically")]
-    public RigidBody rigid;
+    public Rigidbody rigid;
     [SerializeField]
     private WeaponType _type;
 
@@ -25,12 +25,17 @@ public class Projectile : MonoBehaviour
     void Awake(){
         bndCheck= GetComponent<BoundsCheck>();
         rend=GetComponent<Renderer>();
-        rigid=GetComponent<RigidBody>();
+        rigid=GetComponent<Rigidbody>();
     }
 
     void Update(){
         if(bndCheck.offUp){
             Destroy(gameObject);
         }
+    }
+    public void SetType(WeaponType eType){
+        _type=eType;
+        WeaponDefinition def=Main.GetWeaponDefinition(_type);
+        rend.material.color=def.projectileColor;
     }
 }

@@ -71,7 +71,7 @@ public class Weapon : MonoBehaviour
     public void SetType(WeaponType wt){
         _type=wt;
         if(type==WeaponType.none){
-            this.gameObject.SetActive(fale);
+            this.gameObject.SetActive(false);
             return;
         }else{
             this.gameObject.SetActive(true);
