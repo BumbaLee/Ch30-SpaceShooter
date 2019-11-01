@@ -28,7 +28,7 @@ public class Hero : MonoBehaviour
         if(S==null){
             S=this; //Set the singleston
         }
-        fireDelegate+=TempFire;
+        //fireDelegate+=TempFire;
     }
 
     void Update(){
@@ -58,16 +58,16 @@ public class Hero : MonoBehaviour
         }
     }
     
-    void TempFire(){
-        GameObject projGO= Instantiate<GameObject>(projectilePrefab);
-        projGO.transform.position=transform.position;
-        Rigidbody rigidB= projGO.GetComponent<Rigidbody>();
+    //void TempFire(){
+        //GameObject projGO= Instantiate<GameObject>(projectilePrefab);
+        //projGO.transform.position=transform.position;
+        //Rigidbody rigidB= projGO.GetComponent<Rigidbody>();
         //rigidB.velocity=Vector3.up*projectileSpeed;
-        Projectile proj= projGO.GetComponent<Projectile>();
-        proj.type=WeaponType.blaster;
-        float tSpeed=Main.GetWeaponDefinition(proj.type).velocity;
-        rigidB.velocity=Vector3.up*tSpeed;
-    }
+        //Projectile proj= projGO.GetComponent<Projectile>();
+        //proj.type=WeaponType.blaster;
+        //float tSpeed=Main.GetWeaponDefinition(proj.type).velocity;
+        //rigidB.velocity=Vector3.up*tSpeed;
+    //}
 
     void OnTriggerEnter(Collider other){
         Transform rootT= other.gameObject.transform.root;
